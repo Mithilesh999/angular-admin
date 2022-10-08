@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Permission } from 'src/app/interfaces/permission';
 import { PermissionService } from 'src/app/services/permission.service';
@@ -11,11 +11,11 @@ import { RoleService } from 'src/app/services/role.service';
   styleUrls: ['./role-create.component.css']
 })
 export class RoleCreateComponent implements OnInit {
-  form!: FormGroup;
+  form!: UntypedFormGroup;
   permissions: Permission[] = [];
   
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private permissionService: PermissionService,
     private roleService: RoleService  ,
     private router: Router
@@ -43,8 +43,8 @@ export class RoleCreateComponent implements OnInit {
     );
   }
 
-  get permissionArray(): FormArray{
-    return this.form.get('permissions') as FormArray;
+  get permissionArray(): UntypedFormArray{
+    return this.form.get('permissions') as UntypedFormArray;
   }
 
   submit(): void {

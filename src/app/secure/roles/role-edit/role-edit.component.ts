@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Permission } from 'src/app/interfaces/permission';
 import { Role } from 'src/app/interfaces/role';
@@ -13,12 +13,12 @@ import { RoleService } from 'src/app/services/role.service';
 })
 export class RoleEditComponent implements OnInit {
 
-  form!: FormGroup;
+  form!: UntypedFormGroup;
   permissions: Permission[] = [];
   id!: number;
   
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private permissionService: PermissionService,
     private roleService: RoleService  ,
     private router: Router, 
@@ -64,8 +64,8 @@ export class RoleEditComponent implements OnInit {
     })
   }
 
-  get permissionArray(): FormArray{
-    return this.form.get('permissions') as FormArray;
+  get permissionArray(): UntypedFormArray{
+    return this.form.get('permissions') as UntypedFormArray;
   }
 
   submit(): void {

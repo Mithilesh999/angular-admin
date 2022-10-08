@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Role } from 'src/app/interfaces/role';
 import { RoleService } from 'src/app/services/role.service';
@@ -11,12 +11,12 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./user-edit.component.css']
 })
 export class UserEditComponent implements OnInit {
-  form!: FormGroup;
+  form!: UntypedFormGroup;
   roles: Role[] = [];
   id!: number;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private roleService: RoleService,
     private userService: UserService,
     private router: Router,
