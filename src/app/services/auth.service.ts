@@ -20,7 +20,7 @@ export class AuthService {
   }
 
   user(): Observable<User> {
-    return this.http.get<User>(`${environment.api}/user`)
+    return this.http.get<User>(`${environment.api}/user`,{withCredentials:true});
   }
 
   logout(): Observable<void>{
