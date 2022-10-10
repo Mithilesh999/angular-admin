@@ -22,7 +22,7 @@ const routes: Routes = [
     path:'', 
     component: SecureComponent,
     children: [
-      {path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+      {path: '', redirectTo: '/login', pathMatch: 'full' },
       {path: 'dashboard', component: DashboardComponent},
       {path: 'profile', component: ProfileComponent},  
       {path:'users', component: UsersComponent},

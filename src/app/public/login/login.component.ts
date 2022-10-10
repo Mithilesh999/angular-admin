@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 
   submit(): void{
     this.authService.login(this.form.getRawValue())
-    .subscribe( ()=>this.route.navigate(['/']));
+    .subscribe( ()=>this.route.navigate(['/dashboard']));
   }
 
 }
